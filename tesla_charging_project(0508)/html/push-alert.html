@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>推播通知與異常提醒</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #eef6f9;
+      padding: 50px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+    .notice {
+      background-color: #dff9fb;
+      border-left: 5px solid #00cec9;
+      padding: 20px 25px;
+      margin: 20px;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    .notice h3 {
+      margin: 0 0 10px 0;
+      color: #0984e3;
+    }
+    .notice p {
+      margin: 0;
+      font-size: 16px;
+    }
+    .animate__animated {
+      animation-duration: 1s;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="animate__animated animate__fadeInDown">推播通知與異常提醒</h1>
+
+  <div class="notice animate__animated animate__fadeInUp animate__delay-1s">
+    <h3>⚠️ 充電異常通知</h3>
+    <p>您在 2025-05-01 於台中中港站充電時出現電壓不穩，已自動中斷並推送通知。</p>
+  </div>
+
+  <div class="notice animate__animated animate__fadeInUp animate__delay-2s">
+    <h3>🔔 充電完成提醒</h3>
+    <p>您的車輛已於 11:45 完成充電，請儘速移動車輛以避免佔用。</p>
+  </div>
+</body>
+</html>

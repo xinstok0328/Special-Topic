@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>會員註冊</title>
+  <style>
+    body { font-family: system-ui,-apple-system,"Segoe UI",Roboto; padding: 20px; }
+    .row { margin: 8px 0; }
+    label { display:block; margin-bottom:4px; }
+    input, button { padding: 8px; font-size: 14px; width: 100%; box-sizing: border-box; }
+    #msg { margin-top: 10px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+
+  <h2>註冊帳號</h2>
+
+  <!-- 沒有 action / method，讓 JS 接手 -->
+  <form id="regForm" autocomplete="off" novalidate>
+    <div class="row">
+      <label for="account">帳號（建議用 Email）</label>
+      <input id="account" name="account" type="text" required />
+    </div>
+    <div class="row">
+      <label for="password">密碼</label>
+      <input id="password" name="password" type="password" required />
+    </div>
+    <div class="row">
+      <label for="name">姓名</label>
+      <input id="name" name="name" type="text" required />
+    </div>
+    <div class="row">
+      <label for="birthday">生日（YYYY-MM-DD）</label>
+      <input id="birthday" name="birthday" type="date" />
+    </div>
+    <div class="row">
+      <label for="about">關於我</label>
+      <input id="about" name="about" type="text" />
+    </div>
+    <div class="row">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required />
+    </div>
+    <div class="row">
+      <label for="phone">手機</label>
+      <input id="phone" name="phone" type="tel" />
+    </div>
+    <div class="row">
+      <label for="role_id">角色（數字）</label>
+      <input id="role_id" name="role_id" type="number" value="0" min="0" step="1" />
+    </div>
+
+    <!-- 用 button，不要用 submit -->
+    <button id="btnRegister" type="button">註冊</button>
+  </form>
+
+  <div id="msg"></div>
+
+  <script>
+  (function () {
+    const $   = (s) => document.querySelector(s);
+    const form = $('#regForm');
+    const btn  = $('#btnRegister');
+    const msg  = $('#msg');
+
+    // 萬一瀏覽器還是想幫你 submit，這行保底擋掉
+    form.addEventListener('submit', (e) => e.preventDefault());
+
+    btn.addEventListener('click', async () => {
+      msg.style.color = '#333';
+      msg.textContent = '送出中…';
+
+      // 組 payload（後端文件要求的欄位）
+      const payload = {
+        account : $('#account').value.trim(),
+        password: $('#password').value,
+        name    : $('#name').value.trim(),
+        birthday: $('#birthday').value.trim(),
+        about   : $('#about').value.trim(),
+        email   : $('#email').value.trim(),
+        phone   : $('#phone').value.trim(),
+        role_id : $('#role_id').value ? Number($('#role_id').value) : 0,
+      };
+      // 移除空值，避免送出空字串
+      Object.keys(payload).forEach(k => (payload[k] === '' || payload[k] === undefined) && delete payload[k]);
+
+      console.log('>>> 將以 POST 送出到 /api/proxy/register.php', payload);
+
+      try {
+        const res = await fetch('/api/proxy/register.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload),
+          cache: 'no-store'
+        });
+        const data = await res.json().catch(() => ({}));
+
+        console.log('<<< 伺服器回應', res.status, data);
+
+        if (res.ok && data && data.success) {
+          msg.style.color = '#0a0';
+          msg.textContent = '註冊成功！';
+        } else {
+          msg.style.color = '#b00';
+          msg.textContent = '註冊失敗：' + (data.message || ('HTTP ' + res.status));
+        }
+      } catch (err) {
+        msg.style.color = '#b00';
+        msg.textContent = '網路或代理錯誤：' + err;
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

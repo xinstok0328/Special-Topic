@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>查詢充電站</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .logout-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: #ff4444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .logout-btn:hover {
+      background-color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+  <a href="../php/logout.php" class="logout-btn">登出</a>
+  <div class="container">
+    <h1>選擇充電站</h1>
+    <ul class="station-list">
+      <li onclick="selectStation('台中超充站')">台中超充站</li>
+      <li onclick="selectStation('台北超充站')">台北超充站</li>
+      <li onclick="selectStation('高雄超充站')">高雄超充站</li>
+    </ul>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>

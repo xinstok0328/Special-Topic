@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>預約充電</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .logout-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: #ff4444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .logout-btn:hover {
+      background-color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+  <a href="../php/logout.php" class="logout-btn">登出</a>
+  <div class="container">
+    <h1>預約充電時間</h1>
+    <input type="datetime-local" id="reserve-time">
+    <button onclick="reserve()">確認預約</button>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>

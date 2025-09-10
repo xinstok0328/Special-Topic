@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>深入了解 - 智慧充電樁APP</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 40px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #00b894;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    .btn:hover {
+      background-color: #019875;
+    }
+    #moreInfo {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container animate__animated animate__fadeIn">
+    <h1>深入了解 智慧充電樁APP</h1>
+    <p>本頁面提供更詳細的技術與應用說明，協助您全面理解本系統的設計理念與功能架構。</p>
+    
+    <button class="btn" id="showMoreBtn">點我展開更多技術細節</button>
+
+    <div id="moreInfo">
+      <h2>技術架構簡介</h2>
+      <p>本APP前端使用 HTML、CSS、JavaScript，後端採用 Node.js 串接 MySQL 資料庫，並透過 RESTful API 與 IoT 裝置連結，實現資料即時同步與管理。</p>
+    </div>
+  </div>
+
+  <script>
+    // 展開技術細節
+    document.getElementById("showMoreBtn").addEventListener("click", function () {
+      const info = document.getElementById("moreInfo");
+      if (info.style.display === "none") {
+        info.style.display = "block";
+        info.classList.add("animate__animated", "animate__fadeInUp");
+      } else {
+        info.style.display = "none";
+        info.classList.remove("animate__fadeInUp");
+      }
+    });
+  </script>
+</body>
+</html>

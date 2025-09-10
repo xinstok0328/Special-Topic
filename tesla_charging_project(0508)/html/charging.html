@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>充電管理介面</title>
+  <link rel="stylesheet" href="../css/charging.css">
+</head>
+<body>
+  <!-- 主要內容區 (示意) -->
+  <header>
+    <h1>智慧充電樁管理平台</h1>
+    <nav>
+      <button id="logoutBtn">登出</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="records">
+      <!-- JavaScript 會載入充電紀錄 -->
+    </section>
+  </main>
+
+  <!-- 登入守門 & 授權請求（請放在 </body> 前，唯一一段即可） -->
+<script type="module">
+  import { guard, authFetch, logout } from '../js/auth.js';
+
+  // 1) 沒有 token 就自動導回 login.php
+  guard('login.php');
+
+  // 2) 綁定「登出」按鈕（呼叫後端 /api/proxy/logout.php，並清 Token）
+  document.getElementById('logoutBtn')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    logout();
+  });
+
+  // 3) 範例：帶授權抓資料（若你的保護端點走 proxy，請用 /proxy/...）
+  async function loadRecords() {
+    const res = await authFetch('/proxy/charging/get-records.php'); // ←路徑依你實際檔案
+    if (!res.ok) {
+      console.error('無法取得紀錄');
+      return;
+    }
+    const data = await res.json();
+    const list = document.getElementById('records');
+    list.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+  }
+  loadRecords();
+</script>
+
+
+
+  <!-- 既有互動腳本 (若 main.js 不是 ESModule，可留在此處) -->
+  <script src="../js/main.js"></script>
+</body>
+</html>

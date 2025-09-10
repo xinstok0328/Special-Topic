@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>個人化充電紀錄與分析</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #f9f9f9;
+      padding: 50px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #2d3436;
+      margin-bottom: 20px;
+    }
+    #summary {
+      background-color: #dfe6e9;
+      padding: 20px 30px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      max-width: 800px;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      font-size: 16px;
+    }
+    th {
+      background-color: #00b894;
+      color: white;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .btn {
+      margin-top: 30px;
+      background-color: #00b894;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #019875;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="animate__animated animate__fadeInDown">個人化充電紀錄與分析</h1>
+
+  <div id="summary" class="animate__animated animate__fadeInUp animate__delay-1s">
+    📊 總充電次數：3 次｜總充電量：53 kWh｜總費用：424 元
+  </div>
+
+  <table class="animate__animated animate__fadeInUp animate__delay-2s" id="recordTable">
+    <thead>
+      <tr>
+        <th>日期</th>
+        <th>充電站</th>
+        <th>充電時段</th>
+        <th>電量 (kWh)</th>
+        <th>費用 (NT$)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2025-05-01</td>
+        <td>台中中港站</td>
+        <td>14:00 ~ 15:00</td>
+        <td>20</td>
+        <td>160</td>
+      </tr>
+      <tr>
+        <td>2025-04-28</td>
+        <td>台中西屯站</td>
+        <td>10:00 ~ 11:00</td>
+        <td>15</td>
+        <td>120</td>
+      </tr>
+      <tr>
+        <td>2025-04-25</td>
+        <td>彰化溪湖站</td>
+        <td>13:00 ~ 14:00</td>
+        <td>18</td>
+        <td>144</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="btn animate__animated animate__fadeInUp animate__delay-3s" onclick="analyze()">🔍 分析建議</button>
+
+  <script>
+    function analyze() {
+      alert("建議：您多於下午 13~15 時段充電，建議改於上午避開高峰時段！");
+    }
+  </script>
+</body>
+</html>

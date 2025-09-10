@@ -1,0 +1,18 @@
+[2025-08-15 10:06:36] REQ BODY: {
+  "account": "user001@example.com",
+  "password": "@Pssw0rd!",
+  "name": "測試用戶",
+  "birthday": "1990-01-01",
+  "about": "demo",
+  "email": "user001@example.com",
+  "phone": "0912345678",
+  "role_id": 0
+}
+
+[2025-08-15 10:06:36] RESP(500): {"success":false,"code":500,"message":"InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]","data":null}
+[2025-08-15 10:07:38] REQ BODY: 
+[2025-08-15 10:07:38] BAD JSON
+[2025-08-15 18:17:27] REQ BODY: 
+[2025-08-15 18:17:27] BAD JSON
+[2025-08-15 18:17:33] REQ BODY: 
+[2025-08-15 18:17:33] BAD JSON

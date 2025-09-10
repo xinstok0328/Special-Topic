@@ -1,0 +1,107 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  background: url('../images/bg-ev-green.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding-left: 8%;
+}
+
+.login-box {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  width: 320px;
+  z-index: 1;
+}
+
+.login-box h2 {
+  margin-bottom: 24px;
+  color: #34495e;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 16px;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  font-size: 15px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.login-box input:focus {
+  border-color: #48b96c;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 14px;
+  background-color: #48b96c;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-box button:hover {
+  background-color: #3aa158;
+}
+
+/* 動畫葉子效果 */
+.leaf {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjNjg5OTU2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDUwIDUwIj48cGF0aCBkPSJNMjUgMEMxMy43IDAgMyAxMC41IDMgMjIgMyAzMy4zIDEzLjcgNDQgMjUgNDRzMjItMTAuNyAyMi0yMi0xMC43LTIyLTIyLTIyeiIvPjwvc3ZnPg==');
+  background-size: cover;
+  animation: fall linear infinite;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+/* 標題樣式調整 */
+.title {
+  position: absolute;
+  top: 30px;
+  left: 8%;
+  color: white;
+  font-size: 38px;
+  font-weight: bold;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+
+  
+
+
+
+
+

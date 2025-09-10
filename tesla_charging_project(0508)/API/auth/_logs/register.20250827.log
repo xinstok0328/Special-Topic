@@ -1,0 +1,51 @@
+[2025-08-27 15:01:16] BAD METHOD: GET
+[2025-08-27 15:01:17] BAD METHOD: GET
+[2025-08-27 15:01:22] BAD METHOD: GET
+[2025-08-27 15:04:39] REQ BODY: {
+  "account": "user001@example.com",
+  "password": "@Pssw0rd!",
+  "name": "測試用戶",
+  "birthday": "1990-01-01",
+  "about": "demo",
+  "email": "user001@example.com",
+  "phone": "0912345678",
+  "role_id": 0
+}
+
+[2025-08-27 15:04:39] RESP(500): {"success":false,"code":500,"message":"InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]","data":null}
+[2025-08-27 15:12:46] REQ BODY: {
+  "account": "user001@example.com",
+  "password": "@Pssw0rd!",
+  "name": "測試用戶",
+  "birthday": "1990-01-01",
+  "about": "demo",
+  "email": "user001@example.com",
+  "phone": "0912345678",
+  "role_id": 0
+}
+
+[2025-08-27 15:12:46] RESP(500): {"success":false,"code":500,"message":"InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]","data":null}
+[2025-08-27 15:19:43] REQ BODY: {
+  "account": "user_a_1724670000000@example.com",
+  "password": "@Pssw0rd!",
+  "name": "測試A",
+  "birthday": "1993-05-12",
+  "about": "demo",
+  "email": "user_a_1724670000000@example.com",
+  "phone": "0911111222",
+  "role_id": 0
+}
+
+[2025-08-27 15:19:43] RESP(500): {"success":false,"code":500,"message":"InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]","data":null}
+[2025-08-27 15:19:58] REQ BODY: {
+  "account": "user_b_1724670000000@example.com",
+  "password": "@Pssw0rd!",
+  "name": "測試B",
+  "birthday": "1993-05-12",
+  "about": "demo",
+  "email": "user_b_1724670000000@example.com",
+  "phone": "0911111333",
+  "role_id": 1
+}
+
+[2025-08-27 15:19:58] RESP(500): {"success":false,"code":500,"message":"InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]","data":null}

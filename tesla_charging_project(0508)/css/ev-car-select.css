@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    background: url('../images/bg-ev-green.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin: 60px auto;
+    max-width: 960px;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  }
+  
+  h1 {
+    font-size: 28px;
+    color: #2d4739;
+    margin-bottom: 40px;
+  }
+  
+  .car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+  }
+  
+  .car-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .car-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  }
+  
+  .car-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .car-card h2 {
+    margin: 0;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  

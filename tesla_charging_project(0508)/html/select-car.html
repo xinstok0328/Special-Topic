@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>選擇車輛</title>
+  <link rel="stylesheet" href="../css/ev-car-select.css">
+  <style>
+    .logout-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: #ff4444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .logout-btn:hover {
+      background-color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+  <a href="../php/logout.php" class="logout-btn">登出</a>
+  <div class="container">
+    <h1>選擇您的 Tesla 車款</h1>
+    <div class="car-grid">
+      <div class="car-card" onclick="selectCar('Model 3')">
+        <img src="../images/model3.jpg" alt="Model 3">
+        <h2>Model 3</h2>
+      </div>
+      <div class="car-card" onclick="selectCar('Model Y')">
+        <img src="../images/modelY.jpg" alt="Model Y">
+        <h2>Model Y</h2>
+      </div>
+      <div class="car-card" onclick="selectCar('Model S')">
+        <img src="../images/modelS.jpg" alt="Model S">
+        <h2>Model S</h2>
+      </div>
+      <div class="car-card" onclick="selectCar('Model X')">
+        <img src="../images/modelX.jpg" alt="Model X">
+        <h2>Model X</h2>
+      </div>
+    </div>
+  </div>
+  <script>
+    function selectCar(model) {
+      localStorage.setItem("selectedCar", model);
+      localStorage.setItem("selectedCarImage", `../images/${model.replace(' ', '').toLowerCase()}.jpg`);
+      window.location.href = "charging.html";
+    }
+  </script>
+</body>
+</html>
+
+

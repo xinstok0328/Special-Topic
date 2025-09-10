@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧充電樁管理與應用APP - 充電樁即時查詢</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        header {
+            background-color: #00b894;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .card p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #00cec9;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .logout-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #00b894;
+            color: white;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .logout-btn:hover {
+            background-color: #019875;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <a href="../php/logout.php" class="logout-btn">登出</a>
+    <header class="animate__animated animate__fadeInDown">
+        <h1>充電樁即時查詢</h1>
+    </header>
+
+    <main class="main">
+        <div class="card animate__animated animate__fadeInUp">
+            <h3>台北市信義區A1站</h3>
+            <p><strong>地址：</strong>台北市信義區松壽路123號</p>
+            <p><strong>狀態：</strong>空閒</p>
+            <p><strong>可用樁數：</strong>3 / 5</p>
+            <p><strong>最大功率：</strong>120kW</p>
+        </div>
+        <div class="card animate__animated animate__fadeInUp animate__delay-1s">
+            <h3>新北市板橋區B2站</h3>
+            <p><strong>地址：</strong>新北市板橋區中山路456號</p>
+            <p><strong>狀態：</strong>使用中</p>
+            <p><strong>可用樁數：</strong>1 / 4</p>
+            <p><strong>最大功率：</strong>150kW</p>
+        </div>
+        <div class="card animate__animated animate__fadeInUp animate__delay-2s">
+            <h3>台中市西屯區C3站</h3>
+            <p><strong>地址：</strong>台中市西屯區市政北一路789號</p>
+            <p><strong>狀態：</strong>空閒</p>
+            <p><strong>可用樁數：</strong>5 / 5</p>
+            <p><strong>最大功率：</strong>100kW</p>
+        </div>
+        <div class="card animate__animated animate__fadeInUp animate__delay-3s">
+            <h3>高雄市苓雅區D4站</h3>
+            <p><strong>地址：</strong>高雄市苓雅區光華一路321號</p>
+            <p><strong>狀態：</strong>維護中</p>
+            <p><strong>可用樁數：</strong>0 / 6</p>
+            <p><strong>最大功率：</strong>80kW</p>
+        </div>
+        <div class="card animate__animated animate__fadeInUp animate__delay-4s">
+            <h3>台南市永康區E5站</h3>
+            <p><strong>地址：</strong>台南市永康區中正路987號</p>
+            <p><strong>狀態：</strong>空閒</p>
+            <p><strong>可用樁數：</strong>4 / 4</p>
+            <p><strong>最大功率：</strong>90kW</p>
+        </div>
+    </main>
+
+    <footer>
+        智慧充電樁管理與應用APP © 2025 | 聯絡我們：<a href="mailto:support@example.com">support@example.com</a>
+    </footer>
+</body>
+</html>

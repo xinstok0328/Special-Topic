@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>能源優化管理</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #f4fbf8;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #2d3436;
+      margin-bottom: 20px;
+    }
+    p {
+      max-width: 800px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #2f3e46;
+      text-align: center;
+    }
+    .card {
+      background-color: #dfe6e9;
+      border-radius: 16px;
+      padding: 30px;
+      margin-top: 30px;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .card h2 {
+      color: #0984e3;
+      margin-bottom: 15px;
+    }
+    .pulse-icon {
+      font-size: 48px;
+      color: #00cec9;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.15); opacity: 0.6; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .btn {
+      margin-top: 40px;
+      background-color: #00b894;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #019875;
+    }
+
+    #simulation {
+      margin-top: 40px;
+      padding: 30px;
+      background-color: #ecf0f1;
+      border-radius: 16px;
+      max-width: 600px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .step {
+      margin: 15px 0;
+      font-size: 18px;
+      color: #2c3e50;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeStep 1s ease forwards;
+    }
+
+    @keyframes fadeStep {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="animate__animated animate__fadeInDown">能源優化管理</h1>
+  <p class="animate__animated animate__fadeIn animate__delay-1s">
+    本系統運用人工智慧（AI）與即時監控數據，針對電動車充電樁的用電情況進行分析與預測，達到能源最佳化配置。
+    可減少尖峰耗電、避免能源浪費，並提升整體系統運作效率，邁向綠能永續。
+  </p>
+
+  <div class="card animate__animated animate__fadeInUp animate__delay-2s">
+    <div class="pulse-icon">⚡</div>
+    <h2>即時負載平衡</h2>
+    <p>根據充電站用電情況，智慧調整充電時段，避免電網過載。</p>
+  </div>
+
+  <div class="card animate__animated animate__fadeInUp animate__delay-3s">
+    <div class="pulse-icon">📊</div>
+    <h2>AI 預測模型</h2>
+    <p>透過歷史用電資料與天氣數據進行學習，預測即將到來的能源高峰期。</p>
+  </div>
+
+  <button class="btn animate__animated animate__fadeInUp animate__delay-4s" onclick="startSimulation()">啟動能源優化模擬</button>
+
+  <div id="simulation">
+    <div class="step" style="animation-delay: 0.5s;">📡 擷取即時用電數據中...</div>
+    <div class="step" style="animation-delay: 1.5s;">🤖 AI 模型分析中...</div>
+    <div class="step" style="animation-delay: 2.5s;">📈 預測高峰負載：82%</div>
+    <div class="step" style="animation-delay: 3.5s;">✅ 建議充電時段：避開 15:00~17:00</div>
+  </div>
+
+  <script>
+    function startSimulation() {
+      const sim = document.getElementById("simulation");
+      sim.style.display = "flex";
+    }
+  </script>
+</body>
+</html>

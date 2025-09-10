@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    background: linear-gradient(135deg, #e0f7ec, #d1f0d5);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.charging-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+.car-name-box {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.car-name-box h2 {
+    color: #2d4739;
+    margin: 0 0 15px 0;
+    font-size: 20px;
+}
+
+.car-name {
+    color: #48b96c;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.charging-status {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.status-box, .time-box {
+    flex: 1;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.status-box h3, .time-box h3 {
+    color: #2d4739;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.status, .time {
+    color: #48b96c;
+    font-size: 18px;
+    margin: 0;
+    font-weight: 500;
+}
+
+@media (max-width: 480px) {
+    .charging-status {
+        flex-direction: column;
+    }
+    
+    .car-name {
+        font-size: 20px;
+    }
+}
+
+.progress-wrapper {
+    margin-top: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 24px;
+    background-color: #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(
+      90deg,
+      #48b96c 0%,
+      #6dd5a1 50%,
+      #48b96c 100%
+    );
+    background-size: 200% 100%;
+    animation: flow 2s linear infinite;
+    border-radius: 12px;
+    transition: width 0.5s ease;
+}
+
+/* 流動動畫 */
+@keyframes flow {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+}
+
+.progress-info {
+    margin-top: 12px;
+    font-size: 16px;
+    color: #555;
+}
+
+.progress-info span {
+    display: block;
+    margin-top: 6px;
+}
+  

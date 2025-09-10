@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>智慧預約排程</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #f0f8ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+    }
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+    .form-group {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #34495e;
+    }
+    select, input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .time-slots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .slot {
+      padding: 10px 15px;
+      background-color: #dff9fb;
+      border: 1px solid #00cec9;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    .slot:hover {
+      background-color: #00cec9;
+      color: white;
+      transform: scale(1.05);
+    }
+    .slot.active {
+      background-color: #00cec9;
+      color: white;
+    }
+    .btn {
+      margin-top: 30px;
+      background-color: #00b894;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #019875;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="animate__animated animate__fadeInDown">智慧預約排程</h1>
+
+  <div class="form-group animate__animated animate__fadeInUp animate__delay-1s">
+    <label for="station">選擇充電站</label>
+    <select id="station">
+      <option>台中中港站</option>
+      <option>台中西屯站</option>
+      <option>台中豐原站</option>
+      <option>彰化溪湖站</option>
+      <option>台南永康站</option>
+    </select>
+  </div>
+
+  <div class="form-group animate__animated animate__fadeInUp animate__delay-2s">
+    <label for="date">選擇日期</label>
+    <input type="date" id="date">
+  </div>
+
+  <div class="form-group animate__animated animate__fadeInUp animate__delay-3s">
+    <label>選擇時段</label>
+    <div class="time-slots" id="timeSlots">
+      <div class="slot">10:00 ~ 11:00</div>
+      <div class="slot">11:00 ~ 12:00</div>
+      <div class="slot">12:00 ~ 13:00</div>
+      <div class="slot">13:00 ~ 14:00</div>
+      <div class="slot">14:00 ~ 15:00</div>
+    </div>
+  </div>
+
+  <button class="btn animate__animated animate__fadeInUp animate__delay-4s">確認預約</button>
+
+  <script>
+const slots = document.querySelectorAll('.slot');
+let selectedSlot = null;
+
+slots.forEach(slot => {
+  slot.addEventListener('click', () => {
+    slots.forEach(s => s.classList.remove('active'));
+    slot.classList.add('active');
+    selectedSlot = slot.textContent;
+  });
+});
+
+document.querySelector('.btn').addEventListener('click', () => {
+  const station = document.getElementById('station').value;
+  const date = document.getElementById('date').value;
+
+  if (!selectedSlot) {
+    alert('請先選擇一個時段再進行預約！');
+    return;
+  }
+
+  if (!date) {
+    alert('請選擇日期！');
+    return;
+  }
+
+  alert(`預約成功！\n站點：${station}\n日期：${date}\n時段：${selectedSlot}`);
+});
+
+</script>
+</body>
+</html>
